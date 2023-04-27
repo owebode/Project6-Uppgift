@@ -1,13 +1,12 @@
- # Uppgift-Project6
+ # Project6 Uppgift 2023
 
 
 ## Clone to update base system
-`git clone https://github.com/owebode/Uppgift-Project6.git .`
+`git clone https://github.com/owebode/Project6-Uppgift.git .`
 
 ## Use as new project
-`https://github.com/owebode/Uppgift-Project6.git . && rm -rf .git`
+`https://github.com/owebode/Project6-Uppgift.git . && rm -rf .git`
 
 
 ## Develop
 `sass --watch src/scss/style.scss style.css`
-# Project6-Uppgift
