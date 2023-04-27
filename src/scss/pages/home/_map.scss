@@ -1,0 +1,12 @@
+@use '../../utilities/responsive';
+
+.map {
+
+    display: grid;
+    grid-template-columns: var(--grid-container);
+    background-image: url(assets/images/map.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 494px;
+}

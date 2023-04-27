@@ -1,0 +1,114 @@
+@use '../../components/buttons';
+@use '../../components/overlay';
+@use '../../utilities/responsive';
+
+.hero {
+
+    width: 100%;
+    display: grid;
+    grid-template-columns: var(--grid-container);
+    background-color: var(--color-dark);
+    background-size: cover;
+    background-image: linear-gradient(
+    to bottom,
+    hsla(0, 0%, 0%, 0.38),
+    hsla(0, 0%, 0%, 0.38)
+    ), url(assets/images/Hero-Background.png);
+    
+    &__inner {
+
+        padding: calc(var(--section-gap-inner) + 117px) 0 var(--section-gap-inner) 0;
+        display: flex;
+        flex-direction: column;
+        grid-column: inner;
+        gap: var(--gap-xxxl);
+        
+        figure {
+            margin: 0;
+        }
+
+    }
+
+    &__title {
+        font-size: var(--font-size-6);
+        margin-bottom: var(--gap-m);
+
+        @include responsive.max(700px) {
+            font-size: var(--font-size-5);
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1.3rem;
+    }
+
+    &__button {
+        transition: 0.5s;
+        @include buttons.default;
+
+        &--blue {
+            @include buttons.default($background:var(--color-accent), $hover-color: var(--color-accent-600));
+        }
+        
+    }
+
+
+    &__footer {
+        display: flex;
+        justify-content: space-between;
+        padding-top: var(--gap-s);
+
+        &__meta {
+            display: flex;
+            gap: var(--gap-s);
+            align-items: center;
+        }
+
+        &__readmore {
+            font-size: 1.6rem;
+            margin: 0 0 12px 0;
+            display: block;
+            color: var(--color-light);
+            cursor: pointer;
+            transition: color 0.2s;
+
+
+            &:hover {
+                color: var(--color-accent);
+            }
+        }
+
+        &__icon {
+            transform: scale(1);
+            overflow: hidden;
+            transition: 0.2s;
+            cursor: pointer;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+
+        &__social {
+            display: flex;
+            align-items: center;
+            gap: var(--gap-s);
+
+            &__facebook, &__instagram {
+                cursor: pointer;
+                overflow: hidden;
+                transform: scale(1);
+                transition: transform 0.2s;
+
+                &:hover {
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+
+
+}

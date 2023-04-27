@@ -1,0 +1,68 @@
+body {
+    font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    font-style: oblique;
+    font-weight: 400;
+}
+
+
+h1 {
+    // font-size: var(--font-size-6);
+    font-size: clamp(3rem, 2.7426rem + 8.5789vw, 3.815rem);
+    color: var(--color-light);
+    
+}
+
+h2 {
+    font-size: var(--font-size-5);
+    color: var(--color-light);
+}
+
+h3 {
+    font-size: var(--font-size-4);
+    color: var(--color-dark-500);
+}
+
+h4 {
+    font-size: var(--font-size-3);
+    color: var(--color-light);
+}
+
+h5 {
+    font-size: var(--font-size-2);
+}
+
+h6 {
+    font-size: var(--font-size-1);
+}
+
+p {
+    line-height: var(--line-height);
+    font-size: var(--font-size-1);
+}
+
+a {
+    color: var(--color-light);
+    text-decoration: none;
+    line-height: var(--line-height);
+    &:hover {
+        color: var(--color-accent);
+    }
+}
+
+li {
+    line-height: var(--line-height);
+    font-family: var(--font-serif);
+    font-style: oblique;
+    font-weight: 400;
+    font-size: 1.65rem;
+}
+
+span {
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: var(--font-size-1);
+}

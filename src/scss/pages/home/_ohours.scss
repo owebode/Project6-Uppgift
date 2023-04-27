@@ -1,0 +1,196 @@
+@use '../../utilities/responsive';
+@use '../../components/overlay';
+@use '../../components/arrow';
+
+.ohours {
+    max-width: 100vw;
+    display: grid;
+    grid-template-columns: var(--grid-container);
+    background-color: var(--color-light);
+
+    &__inner {
+        grid-column: inner;
+        padding: var(--section-gap) 0;
+    }
+
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 0 var(--gap-m) 0;
+
+        span {
+            color: var(--color-accent-400);
+        }
+
+        @include responsive.max(842px) {
+            & {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    }
+
+    &__title {
+        display: flex;
+        gap: var(--gap-m);
+        align-items: center;
+        h3 {
+            color: var(--color-dark-500);
+        }
+
+        h4 {
+            color: var(--color-accent);
+            margin-bottom: var(--gap-m);
+        }
+        
+    }
+
+    figure {
+        margin: 0;
+    }
+
+    &__cards {
+        display: flex;
+        justify-content: space-between;
+        gap: var(--gap-s);
+        flex-wrap: wrap;
+
+        @include responsive.max(842px) {
+           justify-content: center;
+        }
+    }
+
+    &__reception {
+
+        &--active {
+            color: var(--color-accent-600);
+        }
+
+        &__title {
+            h3 {
+                color: var(--color-light);
+            }
+            
+        }
+
+        &__content {
+
+            @include overlay.default($color: var(--color-light));
+
+            &::before {
+                    top: 0;
+                    right: 0;
+                    transform: rotate(-90deg);
+            }
+
+        }
+    }
+
+
+    &__card {
+
+        &__days {
+            display: flex;
+            flex-direction: column;
+            gap: var(--gap-s);
+
+            :nth-child(even) {
+                background-color: var(--color-light-100);
+            }
+        }
+
+        &__time {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            
+        }
+
+        &__times {
+            display: flex;
+            flex-direction: column;
+            gap: var(--gap-s);
+
+            :nth-child(even) {
+                background-color: var(--color-light-100);
+            }
+        }
+
+        &__content {
+            background-color: var(--color-accent-300);
+            color: var(--color-light);
+            display: flex;
+            flex-direction: column;
+            padding: 0 var(--gap-l) var(--gap-m) var(--gap-l);
+        }
+
+        
+        &__footer {
+            font-size: 0.7rem;
+            padding-top: var(--gap-m);
+            span {
+                font-size: 0.7rem;
+            }
+        }
+        
+            
+            &__text {
+                    text-align: center;
+                    padding: 0 var(--gap-m) var(--gap-xxl);
+                }
+                
+                &__image {
+                    cursor: pointer;
+                }
+                
+            }
+
+            &__keycard__content, &__bastu__content {
+                background-color: var(--color-light);
+                
+                h3 {
+                    color: var(--color-dark-500);
+                }
+                span {
+                    color: var(--color-dark-300);
+                }
+            }
+
+            &__keycard__days, 
+            &__bastu__days, 
+            &__keycard__times, 
+            &__bastu__times {
+                :nth-child(even) {
+                    background-color: var(--color-dark-600);
+                }
+            }
+
+            &__keycard--active, &__bastu--active {
+                color: var(--color-accent) !important;
+            }
+
+
+
+    &__reception {
+
+        width: 436px;
+        
+    }
+
+    &__bastu, &__keycard {
+        width: 327px;
+
+    }
+
+
+    @include responsive.max(842px) {
+        &__bastu, &__keycard, &__reception {
+            max-width: 436px;
+        }
+    }
+
+        
+
+}

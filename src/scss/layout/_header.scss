@@ -1,0 +1,74 @@
+@use '../utilities/responsive';
+
+.header {
+    display: grid;
+    grid-template-columns: var(--grid-container);
+    height: 176px;
+    width: 100%;
+    position: fixed;
+    z-index: 500;
+    top: 0;
+    left: 0;
+    
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        grid-column: inner;
+
+    }
+}
+
+.site-header__branding {
+    display: flex;
+    align-items: center;
+}
+
+.site-menu {
+    display: flex;
+    justify-content: center;
+    gap: var(--gap-m);
+
+
+    &__list {
+        display: flex;
+        gap: var(--gap-m);
+    }
+
+    &__item {
+        list-style: none;
+
+        &--active {
+            border-bottom: 2px solid var(--color-accent-600);
+        }
+    }
+
+    &__hamburger {
+        display: flex;
+        align-items: center;
+        transition: color 0.2s;
+
+        &__icon {
+            svg {
+
+                transition: transform 0.35s;
+            }
+            
+            &:hover svg {
+                transform: rotate(90deg);
+            }
+        }
+    }
+
+    @include responsive.max(760px) {
+        &__list {
+            display: none;
+        }
+
+        &__hamburger {
+            display: block;
+        }
+    }
+
+}

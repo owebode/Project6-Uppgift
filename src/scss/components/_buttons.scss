@@ -1,0 +1,22 @@
+@mixin default(
+ $background: var(--color-accent-600),
+ $color: var(--color-light), 
+ $hover-background: var(--color-accent-700), 
+ $hover-color: var(--color-accent)
+ ) {
+    background-color: $background;
+    color: $color;
+    padding: 1.5rem 1.7rem;
+    border: 0;
+    transform: skew(-10deg, 0deg);
+    font-size: var(--font-size-2);
+    font-weight: 700;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 1;
+    &:hover {
+        color: $hover-color;
+        opacity: 0.8;
+    }
+}

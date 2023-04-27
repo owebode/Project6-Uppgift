@@ -1,0 +1,142 @@
+@use '../../utilities/responsive';
+@use '../../components/buttons';
+@use '../../components/overlay';
+
+.news {
+    max-width: 100vw;
+    display: grid;
+    grid-template-columns: var(--grid-container);
+    background-color: var(--color-light);
+
+    &__inner {
+        grid-column: inner;
+        padding: 0 0 var(--section-gap) 0;
+
+    }
+
+    &__title {
+        padding: 0 0 var(--gap-s) 0;
+        
+    }
+
+    figure {
+        margin: 0;
+        img {
+            display: flex;
+        }
+    }
+
+    &__cards {
+        display: flex;
+        justify-content: space-between;
+        gap: var(--gap-s);
+        
+        @include responsive.max(1252px) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+
+
+    }
+
+    &__card {
+
+        background-color: var(--color-light);
+        display: flex;
+        flex-direction: column;
+        width: 404px;
+        overflow: hidden;
+
+        &__public {
+
+            color: var(--color-dark-900);
+        }
+    
+        &__title {
+            color: var(--color-dark-500);
+            margin-top: 0.7rem;
+        }
+
+        &__image {
+            cursor: pointer;
+            transform: scale(1);
+            transition: transform 0.2s;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+
+
+        }
+
+        &__footer {
+            display: flex;
+            gap: var(--gap-m);
+            align-items: center;
+            padding-left: var(--gap-s);
+        }
+
+        &__button {
+            transition: 0.5s;
+            @include buttons.default
+            
+        }
+
+        &__share {
+            font-size: var(--font-size-3);
+            color: var(--color-dark-500) ;
+            cursor: pointer;
+            transition: color 0.2s;
+
+            &:hover {
+                color: var(--color-accent);
+            }
+        }
+
+        @include responsive.max(1246px) {
+            & {
+                max-width: 404px;
+            }
+        }
+
+        @include responsive.max(466px) {
+            & {
+                max-width: 300px;
+            }
+        }
+
+    }
+
+    &__towcards {
+        display: flex;
+        flex-direction: column;
+
+        @include responsive.max(1252px) {
+            flex-wrap: wrap;
+            justify-content: center;
+
+        }
+
+    }
+
+    &__card1 {
+        width: 763px;
+        &__footer {
+            margin-top: var(--gap-m);
+        }
+
+        @include responsive.max(1246px) {
+
+            & {
+                max-width: 763px;
+            }
+
+        }
+    }
+
+    &__card2 {
+        padding-bottom: var(--gap-xl);
+    }
+
+}

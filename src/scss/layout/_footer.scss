@@ -1,0 +1,98 @@
+@use '../utilities/responsive';
+@use '../components/overlay';
+
+.footer {
+    display: grid;
+    grid-template-columns: var(--grid-container);
+    background-color: var(--color-dark);
+    padding: var(--section-gap);
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        color: var(--color-light);
+        line-height: 3rem;
+        font-size: var(--font-size-3);
+        grid-column: inner;
+
+        figure {
+            margin: 0;
+        }
+    }
+
+    @include responsive.max(700px) {
+        &__inner {
+            padding: var(--section-gap-inner) 0;
+        }
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        @include responsive.max(1050px) {
+
+            gap: var(--gap-xl);
+            flex-wrap: wrap;
+        }
+
+        @include responsive.max(716px) {
+            justify-content: center;
+            grid-template: var(--gap-s);
+        }
+    }
+
+    &__left {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__menu__list {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap-s);
+    
+    }
+
+    &__right {
+        padding-bottom: var(--gap-s);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        &__icon {
+            display: flex;
+            padding-top: var(--gap-m);
+        }
+
+        &__social {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: var(--gap-s);
+
+            &__facebook, &__instagram {
+                cursor: pointer;
+                overflow: hidden;
+                transform: scale(1);
+                transition: transform 0.2s;
+
+                &:hover {
+                    transform: scale(1.2);
+                }
+            }
+        }
+
+
+    }
+
+    &__copyright {
+        padding-top: var(--section-gap-inner);
+        // text-align: center;
+    }
+
+}

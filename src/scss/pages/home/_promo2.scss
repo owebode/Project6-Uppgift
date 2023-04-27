@@ -1,0 +1,104 @@
+@use '../../utilities/responsive';
+@use '../../components/overlay';
+@use '../../components/arrow';
+
+.promo2 {
+    max-width: 100vw;
+    display: grid;
+    grid-template-columns: var(--grid-container);
+
+    &__inner {
+        grid-column: inner;
+        background-image: linear-gradient(
+        to bottom,
+        hsla(0, 0%, 0%, 0.38),
+        hsla(0, 0%, 0%, 0.38)
+        ), url(assets/images/Promo2-background.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+
+    }
+
+    figure {
+        margin: 0;
+    }
+
+    &__content {
+        
+        gap: var(--gap-m);
+
+        &__text {
+            padding: var(--section-gap);
+
+            @include responsive.max(950px) {
+
+                padding: var(--section-gap-inner);
+    
+            }
+
+            @include responsive.max(910px) {
+
+                h2 {
+                    font-size: var(--font-size-4);
+                }
+
+                h4 {
+                    font-size: var(--font-size-2);
+                }
+
+            }
+
+            @include responsive.max(712px) {
+
+                padding: var(--gap-m);
+
+                h2 {
+                    font-size: var(--font-size-3);
+                }
+
+                h4 {
+                    font-size: var(--font-size-1);
+                }
+    
+            }
+ 
+        }
+
+        transition: 0.5s;
+        @include overlay.default($color: var(--color-accent), $opacity: 1);
+        
+    }
+    
+    &__title {
+        margin: 0;
+    }
+
+    &__subtitle {
+        margin: 0;
+    }
+
+
+    &__image {
+        display: flex;
+        align-self: flex-end;
+        width: 32px;
+        
+        cursor: pointer;
+    }
+
+    &__arrow {
+        @include arrow.default();
+
+    
+        &::after {
+            bottom: 9px;
+            right: 9px;
+        }
+        &::before {
+            bottom: 17px;
+            right: 9px;
+        }
+    }
+   
+}
+

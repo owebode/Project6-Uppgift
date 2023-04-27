@@ -1,0 +1,28 @@
+
+@mixin default($color: var(--color-dark), $opacity: 0.21) {
+    position: relative;
+    cursor: pointer;
+
+    &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        right: 0;
+        bottom: 0;
+        opacity: $opacity;
+        width: 0;
+        height: 0;
+        border-width: 0 0 90px 90px;
+        border-color: transparent transparent $color transparent;
+        border-style: solid;
+    }
+
+    &:hover {
+        &::before {
+            opacity: 0.43;
+        }
+    }
+    
+
+}
+
